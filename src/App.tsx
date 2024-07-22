@@ -10,7 +10,7 @@ function App() {
     <>
       <div>
         <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+          <script type="module" src="/src/main.tsx"></script>
         </a>
         {/* <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
@@ -18,18 +18,15 @@ function App() {
       </div>
       <h1>Cuisine & Recettes</h1>
       <div className="card">
-      <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
+       {/*  <p>
           Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        </p> */}
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      Une pincée d'amour, un zeste de coeur !
       </p>
     </>
   )
