@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Autocomplete, Loader } from '@mantine/core';
+import {Autocomplete, Box, Button, Flex, Input, Loader} from '@mantine/core';
 
 export function RegisterPage() {
   const timeoutRef = useRef<number>(-1);
@@ -22,14 +22,21 @@ export function RegisterPage() {
       }, 1000);
     }
   };
+  
   return (
-    <Autocomplete
-      value={value}
-      data={data}
-      onChange={handleChange}
-      rightSection={loading ? <Loader size="1rem" /> : null}
-      label="Async Autocomplete data"
-      placeholder="Your email"
-    />
+    <>
+      <Flex direction={"column"} align={"center"} justify={"center"}>
+        <Box w={500}>
+          <Input placeholder="Prénom" size={"xl"} mb={10}/>
+          <Input placeholder="Nom" size={"xl"} mb={10}/>
+          <Input placeholder="E-mail" mb={10} size={"xl"}/>
+          <Input placeholder="Pseudo" mb={10} size={"xl"}/>
+          <Input placeholder="Mot de passe" mb={10} size={"xl"}/>
+          <Flex justify={"end"}>
+            <Button size={"xl"}>Creer mon compte</Button>
+          </Flex>
+        </Box>
+      </Flex>
+    </>
   );
 }
