@@ -25,7 +25,7 @@
       <!-- Left Section: Title, Slogan, and Menu Button -->
       <div class="flex items-center space-x-4">
         <div>
-          <h1 class="text-lg font-semibold text-slate-900">Cuisine & Recettes</h1>
+          <h1 class="text-lg font-semibold text-slate-900">Cuisine et Recettes</h1>
           <div class="text-sm font-medium text-slate-700">Une pincée d'amour, un zeste de coeur</div>
         </div>
         <button id="menuButton" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
@@ -33,13 +33,12 @@
         </button>
       </div>
       <!-- Center Section: Search Bar -->
-<div class="flex items-center space-x-2 my-2 md:my-0 md:mx-auto w-full max-w-4xl">
-  <input type="text" placeholder="Rechercher..." class="py-2 px-4 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full">
-  <button class="bg-blue-500 text-white py-2 px-4 rounded-r-md hover:bg-blue-700">
-    Valider
-  </button>
-</div>
-
+      <div class="flex">
+        <input type="text" placeholder="Rechercher..." class="py-2 px-4 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        <button class="bg-blue-500 text-white py-2 px-4 rounded-r-md hover:bg-blue-700">
+          Valider
+        </button>
+      </div>
       <!-- Right Section: Connexion Button -->
       <button class="h-10 px-6 font-semibold rounded-md bg-black text-white" type="button">
         Connexion
@@ -47,12 +46,37 @@
     </div>
 
     <!-- Main Content Section -->
-    <div class="flex-grow flex items-center justify-center">
-      <div class="w-2/3 h-2/3 bg-white shadow-md rounded-lg p-8">
-        <h2 class="text-2xl font-bold mb-4">Bienvenue sur Cuisine & Recettes</h2>
+    <!-- <div class="flex-grow flex items-center justify-center">
+      <div class="w-2/3 h-full bg-white shadow-md rounded-lg p-8">
+        <h2 class="text-2xl font-bold mb-4">Bienvenue sur Cuisine et Recettes</h2>
         <p class="text-gray-700">Découvrez nos meilleures recettes et partagez vos propres créations culinaires. Bon appétit!</p>
       </div>
+    </div> -->
+
+     <!-- Conteneur Principal -->
+     <div class="flex flex-col h-full">
+      <!-- Section du haut avec boutons -->
+      <div class="flex flex-wrap items-center justify-around bg-gray-200 p-4">
+        <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Bouton 1</button>
+        <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Bouton 2</button>
+        <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Bouton 3</button>
+        <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Bouton 4</button>
+        <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Bouton 5</button>
+      </div>
+      
+      <!-- Section du milieu -->
+      <div class="flex-grow bg-gray-300 p-4 flex items-center justify-center">
+        <div class="bg-blue-500 text-white p-6">
+          Contenu central
+        </div>
+      </div>
+      
+      <!-- Section du bas -->
+      <div class="flex bg-gray-200 p-4 items-center justify-center">
+        <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Bouton bas</button>
+      </div>
     </div>
+    
     <script src="script.js"></script>
 
     <!-- <div class="flex justify-center items-center min-h-screen bg-gray-100">
