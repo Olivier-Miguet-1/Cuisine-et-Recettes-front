@@ -19,11 +19,14 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
   
-  <body>
-
+ <!--  <body>
+    <body class="h-screen flex justify-start items-start">
+    <button id="menuButton" class="absolute top-2 left-1/4 transform -translate-x-1/2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
+      Menu
+    </button>
+    <script src="script.js"></script>
 
     <div class="flex font-sans">
-    
       <form class="flex-auto p-6">
         <div class="flex flex-wrap">
           <h1 class="flex-auto text-lg font-semibold text-slate-900">
@@ -33,8 +36,15 @@
             Une pincée d'amour , un zeste de coeur
           </div>
         </div>
-          <div class="flex justify-end">
-            <button class="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
+        <title>Menu Button with Tailwind</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+      </head>
+        <div class="h-screen flex justify-start items-start">
+        <button id="menuButton" class="absolute top-2 left-1/4 transform -translate-x-1/2 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
+          Menu
+        </button>
+        <div class="flex justify-end">
+        <button class="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
               Connexion
             </button>
           </div>
@@ -46,7 +56,7 @@
         </div>
       </form>
     </div>
-
+ -->
     <!-- <div class="flex justify-center items-center min-h-screen bg-gray-100">
       <div class="flex space-x-4 bg-white p-4 shadow rounded">
         <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
@@ -60,6 +70,26 @@
         </button>
       </div>
     </div> -->
+    <body class="h-screen flex flex-col">
+      <!-- Navbar -->
+      <div class="flex justify-between items-start p-4 bg-gray-100 shadow-md">
+        <!-- Menu Button -->
+        <button id="menuButton" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
+          Menu
+        </button>
+        <!-- Title -->
+        <div class="text-start">
+          <h1 class="text-lg font-semibold text-slate-900">Cuisine et Recettes</h1>
+          <div class="text-sm font-medium text-slate-700">Une pincée d'amour, un zeste de coeur</div>
+        </div>
+        <!-- Connexion Button -->
+        <button class="h-10 px-6 font-semibold rounded-md bg-black text-white" type="button">
+          Connexion
+        </button>
+      </div>
+      
+      <div id="root" class="flex-grow"></div>
+      <script src="script.js"></script>
   </body>
 
 </html>
