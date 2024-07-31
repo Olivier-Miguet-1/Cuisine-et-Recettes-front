@@ -28,6 +28,8 @@ export const LayoutPublic = () => {
                     }
                 </NavLink>
             </header>
+            <NavLink to={"/register"}>register</NavLink>
+            
             <main>
                 <Outlet/>
             </main>
