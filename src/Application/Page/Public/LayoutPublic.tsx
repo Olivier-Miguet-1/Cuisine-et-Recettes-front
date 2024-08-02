@@ -1,6 +1,7 @@
-import {NavLink, Outlet, useLocation} from "react-router-dom";
+import {NavLink, Outlet, useLocation, Link} from "react-router-dom";
 import {ButtonPrimary} from "../../Component/ButtonPrimary.tsx";
 import {Title, useMantineTheme} from "@mantine/core";
+import React from 'react';
 
 export const LayoutPublic = () => {
     // recuperation du theme mantine

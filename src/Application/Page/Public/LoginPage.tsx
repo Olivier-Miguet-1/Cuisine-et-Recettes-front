@@ -1,10 +1,13 @@
-import {Box, Button, Flex, Input} from "@mantine/core";
+import {Box, Button, Flex, Input, Title } from "@mantine/core";
 import React, {useState} from "react";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
+
 
 export const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState(null);
     const navigate = useNavigate();
     
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,6 +31,20 @@ export const LoginPage = () => {
     return (
         <>
             <Flex direction={"column"} align={"center"} justify={"center"}>
+                <Title order={1} mb={30} mt={50}>Bienvenue , entrer vos identifiants</Title>
+                <form onSubmit={handleLogin}>
+                    <Box w={500}>
+                        {error && <div style={{ color: 'red' }}>{error}</div>}
+                        <Input
+                            value={email}
+                            onChange={(e) => setEmail(e.currentTarget.value)}
+                            placeholder="E-mail"
+                            size={"xl"}
+                            mb={10}
+                            type={"email"}
+                            required
+                        />
+            {/* <Flex direction={"column"} align={"center"} justify={"center"}>
                 <form onSubmit={handleLogin}>
                     <Box w={500}>
                     <Flex justify={"center"}>
@@ -42,7 +59,7 @@ export const LoginPage = () => {
                             mb={10}
                             type={"email"}
                             required
-                        />
+                        /> */}
                         <Input
                             value={password}
                             onChange={(e) => setPassword(e.currentTarget.value)}
