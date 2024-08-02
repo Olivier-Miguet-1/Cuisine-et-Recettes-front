@@ -1,7 +1,6 @@
-import {NavLink, Outlet, useLocation, Link} from "react-router-dom";
+import {NavLink, Outlet, useLocation} from "react-router-dom";
 import {ButtonPrimary} from "../../Component/ButtonPrimary.tsx";
 import {Title, useMantineTheme} from "@mantine/core";
-import React from 'react';
 
 export const LayoutPublic = () => {
     // recuperation du theme mantine
@@ -18,7 +17,10 @@ export const LayoutPublic = () => {
                 }}
                 className={"bg-red-500 flex justify-between px-8 py-4 items-center"}
             >
-                <Title order={1}>Cusine & Recette</Title>
+                <NavLink to={"/"}>
+                    <Title order={1}>Cusine & Recette</Title>
+                </NavLink>
+                
                 <NavLink to={location.pathname === "/login" ? "/" : "/login"}>
                     {
                         location.pathname === "/login" ? (

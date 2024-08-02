@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {Box, Button, Flex, Input, Title} from '@mantine/core';
 import {Http} from "../../../Infrastructure/Axios.instance.ts";
+import {useNavigate} from "react-router-dom";
 
 export function RegisterPage() {
     const [firstName, setFirstName] = useState("")
@@ -8,6 +9,7 @@ export function RegisterPage() {
     const [userName, setUserName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const navigate = useNavigate();
     
     const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -22,6 +24,7 @@ export function RegisterPage() {
             })
             
             // redirection vers la page de connexion
+            navigate('/login');
             
         }catch (e) {
             console.error(e)

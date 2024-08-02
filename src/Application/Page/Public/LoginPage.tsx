@@ -1,29 +1,29 @@
 import {Box, Button, Flex, Input, Title } from "@mantine/core";
 import React, {useState} from "react";
-import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
+import {Link, useNavigate} from "react-router-dom";
+import {Http} from "../../../Infrastructure/Axios.instance.ts";
 
 
 export const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     
-    const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const credentials = {
-            email,
+            username: email,
             password,
         };
-        console.log(credentials);
-
-        // Simulez une connexion réussie pour cette démonstration
-        // Vous devrez remplacer cette partie par une requête API réelle
-        setTimeout(() => {
-            // Une fois l'utilisateur connecté, redirigez-le vers la page /login
-            navigate('/login');
-        }, 1000); // Délai simulé pour l'illustration
+        
+        try {
+            const response = await Http.post("/login", credentials)
+            navigate('/dashboard');
+            console.log(response)
+        }catch (e) {
+            console.error(e)
+        }
     };
     
 
