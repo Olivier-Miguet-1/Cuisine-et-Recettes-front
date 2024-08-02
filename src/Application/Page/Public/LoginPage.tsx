@@ -19,10 +19,14 @@ export const LoginPage = () => {
             <Flex direction={"column"} align={"center"} justify={"center"}>
                 <form onSubmit={handleLogin}>
                     <Box w={500}>
+                    <Flex justify={"center"}>
+                            <Button type={"submit"} size={"xl"}>Vos identifiants de connexion.</Button>
+                            
+                        </Flex>
                         <Input
                             value={email}
-                            onChange={(e) => setEmail(e.currentTarget.value)}
-                            placeholder="E-mail"
+                            onChange={(e) => setEmail(e.currentTarget.value)} 
+                            placeholder="E-mail" 
                             size={"xl"}
                             mb={10}
                             type={"email"}
