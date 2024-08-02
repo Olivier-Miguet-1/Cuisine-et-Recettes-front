@@ -11,14 +11,6 @@ export const HomePage = () => {
                     <Text size="lg" mb={20}>
                         Nous sommes heureux de vous voir ici. Explorez nos fonctionnalités et profitez de nos services.
                     </Text>
-                    <Flex justify="center" mb={10}>
-                        <Button size="xl" style={{ margin: '0 10px' }}>
-                            Inscription
-                        </Button>
-                        {/* <Button size="xl" style={{ margin: '0 10px' }}>
-                            Connexion
-                        </Button> */}
-                    </Flex>
                 </Box>
             </Flex>
         </>
