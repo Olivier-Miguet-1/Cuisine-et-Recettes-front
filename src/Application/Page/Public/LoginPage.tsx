@@ -1,9 +1,11 @@
 import {Box, Button, Flex, Input} from "@mantine/core";
 import React, {useState} from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 export const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
     
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -12,7 +14,16 @@ export const LoginPage = () => {
             password,
         };
         console.log(credentials);
+
+        // Simulez une connexion réussie pour cette démonstration
+        // Vous devrez remplacer cette partie par une requête API réelle
+        setTimeout(() => {
+            // Une fois l'utilisateur connecté, redirigez-le vers la page /login
+            navigate('/login');
+        }, 1000); // Délai simulé pour l'illustration
     };
+    
+
     
     return (
         <>
@@ -43,6 +54,9 @@ export const LoginPage = () => {
                         />
                         <Flex justify={"end"}>
                             <Button type={"submit"} size={"xl"}>Se connecter</Button>
+                        </Flex>
+                        <Flex justify={"center"} mt={10}>
+                            <Link to="/register">Pas de compte? Créez-en un ici</Link>
                         </Flex>
                     </Box>
                 </form>
