@@ -32,7 +32,7 @@ type IconPropsType = {
 type ButtonPropsType = {
     onClickButton?: HandlerComponentType
     variantButton?: ActionIconVariant
-    sizeButton?: number | MantineSize
+    sizeButton?: MantineSize | (string & {}) | "compact-lg" | "compact-xs" | "compact-sm" | "compact-md" | "compact-xl" | undefined
     radiusButton?: MantineRadius
     mlButton?: StyleProp<MantineSpacing>
     mrButton?: StyleProp<MantineSpacing>

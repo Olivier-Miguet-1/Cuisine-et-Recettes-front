@@ -1,28 +1,30 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { LayoutPublic } from "./Public/LayoutPublic";
-import { LayoutPrivate } from "./Private/LayoutPrivate";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import Profile from "./pages/Profile";
+import {NavLink, Outlet} from "react-router-dom";
+import {AppShell, useMantineTheme} from "@mantine/core";
 
-function App() {
+export const LayoutPrivate = () => {
+    const theme = useMantineTheme();
+    
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<LayoutPublic />}>
-                    <Route index element={<Home />} />
-                    <Route path="login" element={<Login />} />
-                </Route>
-                <Route path="/dashboard" element={<LayoutPrivate />}>
-                    <Route index element={<Dashboard />} />
-                </Route>
-                <Route path="/profile" element={<LayoutPrivate />}>
-                    <Route index element={<Profile />} />
-                </Route>
-            </Routes>
-        </Router>
+        <>
+           <AppShell
+               navbar={{
+                   width: 300,
+                   breakpoint: 'sm',
+               }}
+           >
+               {/* navbar */}
+               <AppShell.Navbar
+                   style={{ backgroundColor: theme.colors.green[5] }}
+               >
+                   <NavLink to={"/"}>Accueil</NavLink>
+               </AppShell.Navbar>
+               
+               {/* contenu de la page */}
+               <AppShell.Main>
+                   <Outlet />
+               </AppShell.Main>
+               
+           </AppShell>
+        </>
     );
 }
-
-export default App;

@@ -6,8 +6,10 @@ import {RegisterPage} from "../Application/Page/Public/RegisterPage.tsx";
 import {CreateRecipePage} from "../Application/Page/Private/CreateRecipePage.tsx";
 import {MyRecipePage} from "../Application/Page/Private/MyRecipePage.tsx";
 import {LayoutPublic} from "../Application/Page/Public/LayoutPublic.tsx";
+import {LayoutPrivate} from "../Application/Page/Private/LayoutPrivate.tsx";
 
 export const router = createBrowserRouter([
+    // routes public
     {
         path: "/",
         element: <LayoutPublic />,
@@ -26,8 +28,11 @@ export const router = createBrowserRouter([
             },
         ]
     },
+    
+    // routes privé
     {
         path: "/dashboard",
+        element: <LayoutPrivate/>,
         children: [
             {
                 index: true,
