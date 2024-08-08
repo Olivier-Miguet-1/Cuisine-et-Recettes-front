@@ -17,6 +17,8 @@ export const LayoutPrivate = () => {
                    style={{ backgroundColor: theme.colors.green[5] }}
                >
                    <NavLink to={"/"}>Accueil</NavLink>
+                   <NavLink to={"/dashboard"}>Tableau de bord</NavLink>
+                   <NavLink to={"/dashboard/create-rc"}>Creer une recette</NavLink>
                </AppShell.Navbar>
                
                {/* contenu de la page */}
