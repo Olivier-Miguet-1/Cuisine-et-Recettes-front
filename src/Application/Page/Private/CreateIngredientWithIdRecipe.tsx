@@ -9,6 +9,13 @@ export type IngredientType = {
     quantity: string
 }
 
+export type UstensilType = {
+    id: number,
+    name: string,
+    description: string,
+    quantity: string
+}
+
 export const CreateRecipePage = () => {
     const [idIngredient, setIdIngredient] = useState(0)
     
@@ -20,10 +27,10 @@ export const CreateRecipePage = () => {
     const [nameIngredient, setNameIngredient] = useState("")
     const [descriptionIngredient, setDescriptionIngredient] = useState("")
     const [quantityIngredient, setQuantityIngredient] = useState("")
-    
+
     // ici variable useState pour la liste des ingredients
     const [listIngredient, setListIngredient] = useState<IngredientType[]>([])
-
+    
     const addIngredient = () => {
         const ingredient: IngredientType = {
             id: idIngredient,
@@ -80,7 +87,7 @@ export const CreateRecipePage = () => {
                             setDescriptionIngredient(event.currentTarget.value)
                         }
                     }/>
-                    <Input placeholder="Ajouter une quantité" value={quantityIngredient} onChange={
+                    <Input placeholder="Ajouter une quentité" value={quantityIngredient} onChange={
                         (event) => {
                             setQuantityIngredient(event.currentTarget.value)
                         }
@@ -104,68 +111,7 @@ export const CreateRecipePage = () => {
                                     <button onClick={() => deleteIngredient(ingredient.id)} >supprimer</button>
                                 </div>
                             )
-                        })  
-                    }
-                </Flex>
-                
-                {/* <Box mt={20} mb={40}>
-                    <ButtonPrimary >Créer la recette</ButtonPrimary>
-                </Box> */}
-            </div>
-            <div>
-                {/* <Input placeholder="Ajouter un titre" value={titleRecipe} onChange={
-                    (event) => {
-                        setTitleRecipe(event.currentTarget.value)
-                    }
-                }/>
-                <Textarea
-                    placeholder="Ajouter une description"
-                    value={descriptionRecette}
-                    onChange={
-                        (event) => {
-                            setDescriptionRecette(event.currentTarget.value)
-                        }
-                    }
-                /> */}
-                
-                <Flex w={500} justify={"flex-end"} direction={"column"} align={"flex-end"}>
-                    <Title mt={40} mb={20} order={3}>Ajouter des ingredients</Title>
-                    
-                    <Input placeholder="Ajouter un nom" value={nameIngredient} onChange={
-                        (event) => {
-                            setNameIngredient(event.currentTarget.value)
-                        }
-                    }/>
-                    <Input placeholder="Ajouter une description" value={descriptionIngredient} onChange={
-                        (event) => {
-                            setDescriptionIngredient(event.currentTarget.value)
-                        }
-                    }/>
-                    <Input placeholder="Ajouter une quantité" value={quantityIngredient} onChange={
-                        (event) => {
-                            setQuantityIngredient(event.currentTarget.value)
-                        }
-                    }/>
-                    
-                    <Box mt={20}>
-                        <ButtonPrimary onClickButton={addIngredient} >Ajouter ingredient</ButtonPrimary>
-                    </Box>
-                </Flex>
-                
-                <Flex>
-                    {
-                        listIngredient.length > 0 &&
-                        listIngredient.map((ingredient, index) => {
-                            return (
-                                <div style={{backgroundColor: "#E5E5E5", marginTop:"20px", marginLeft: "20px"}} key={index}>
-                                    <p>id: {ingredient.id}</p>
-                                    <p>name: {ingredient.name}</p>
-                                    <p>description: {ingredient.description}</p>
-                                    <p>quantité: {ingredient.quantity}</p>
-                                    <button onClick={() => deleteIngredient(ingredient.id)} >supprimer</button>
-                                </div>
-                            )
-                        })  
+                        })
                     }
                 </Flex>
                 
