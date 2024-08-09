@@ -148,7 +148,7 @@ export const CreateRecipePage = () => {
                     }
                 </Flex>
 
-                {/* <Box mt={20} mb={40}>
+                <Box mt={20} mb={40}>
                     <ButtonPrimary >Créer la recette</ButtonPrimary>
                 </Box> */}
             </div>
@@ -166,7 +166,7 @@ export const CreateRecipePage = () => {
                             setDescriptionRecette(event.currentTarget.value)
                         }
                     }
-                /> */}
+                />
 
                {/*  <Flex w={500} justify={"flex-end"} direction={"column"} align={"flex-end"}>
                     <Title mt={40} mb={20} order={3}>Ajouter des ustensiles</Title>
