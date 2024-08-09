@@ -15,13 +15,21 @@ export type UstensilType = {
     description: string,
     quantity: string
 }
+
+export type RecipeDescriptionType = {
+    id: number,
+    name: string,
+    description: string,
+    time: string
+}
 export const CreateRecipePage = () => {
     const [idIngredient, setIdIngredient] = useState(0)
     const [idUstensil, setIdUstensil] = useState(0)
+    const [idRecipeDescription, setIdRecipeDescription] = useState(0)
 
     // ici variable useState pour la recette
     const [titleRecipe, setTitleRecipe] = useState("")
-    const [descriptionRecette, setDescriptionRecette] = useState("")
+    const [descriptionRecipe, setDescriptionRecipe] = useState("")
 
     // ici variable useState pour les ingredients
     const [nameIngredient, setNameIngredient] = useState("")
@@ -33,11 +41,19 @@ export const CreateRecipePage = () => {
     const [descriptionUstensil, setDescriptionUstensil] = useState("")
     const [quantityUstensil, setQuantityUstensil] = useState("")
 
+    // ici variable useState pour les descriptions de recettes
+    const [nameRecipeDescription, setNameRecipeDescription] = useState("")
+    const [descriptionRecipeDescription, setDescriptionRecipeDescription] = useState("")
+    const [timeRecipeDescription, setTimeRecipeDescription] = useState("")
+
     // ici variable useState pour la liste des ingredients
     const [listIngredient, setListIngredient] = useState<IngredientType[]>([])
 
     // ici variable useState pour la liste des ustensiles
     const [listUstensil, setListUstensil] = useState<UstensilType[]>([])
+
+    // ici variable useState pour la                                                                                    ???????!!!!!!!!!
+    const [listRecipeDescription, setListRecipeDescription] = useState<RecipeDescriptionType[]>([])
 
     const addIngredient = () => {
         const ingredient: IngredientType = {
@@ -79,6 +95,26 @@ export const CreateRecipePage = () => {
         setQuantityUstensil("")
     }
 
+    const addRecipeDescription = () => {
+        const recipeDescription: RecipeDescriptionType = {
+            id: idRecipeDescription,
+            name: nameRecipeDescription,
+            description: descriptionRecipeDescription,
+            time: timeRecipeDescription
+        }
+
+        console.log("RecipeDescription => ", recipeDescription)
+
+        setListRecipeDescription((oldValue) => {
+            return [...oldValue, recipeDescription]
+        })
+
+        setIdRecipeDescription((oldValue) => oldValue + 1)
+        setNameRecipeDescription("")
+        setDescriptionRecipeDescription("")
+        setTimeRecipeDescription("")
+    }
+
     const deleteIngredient = (id: number) => {
         const newArrayOfIngredient = listIngredient.filter((ingredient) => ingredient.id !== id)
         setListIngredient([...newArrayOfIngredient])
@@ -87,6 +123,11 @@ export const CreateRecipePage = () => {
     const deleteUstensil = (id: number) => {
         const newArrayOfUstensil = listUstensil.filter((ustensil) => ustensil.id !== id)
         setListUstensil([...newArrayOfUstensil])
+    }
+
+    const deleteRecipeDescription = (id: number) => {
+        const newArrayOfRecipeDescription = listRecipeDescription.filter((recipeDescription) => recipeDescription.id !== id)
+        setListRecipeDescription([...newArrayOfRecipeDescription])
     }
 
     return (
@@ -99,15 +140,15 @@ export const CreateRecipePage = () => {
                 }/>
                 <Textarea
                     placeholder="Ajouter une description"
-                    value={descriptionRecette}
+                    value={descriptionRecipe}
                     onChange={
                         (event) => {
-                            setDescriptionRecette(event.currentTarget.value)
+                            setDescriptionRecipe(event.currentTarget.value)
                         }
                     }
                 />
 
-                <Flex w={500} justify={"center"} direction={"column"} align={"center"}>
+                <Flex w={500} justify={"center"} direction={"row"} align={"center"}>
                     <Title mt={40} mb={20} order={3}>Ajouter des ingredients</Title>
 
                     <Input placeholder="Ajouter un nom" value={nameIngredient} onChange={
@@ -153,12 +194,12 @@ export const CreateRecipePage = () => {
                 </Box> */}
             </div>
             <div>
-                <Input placeholder="Ajouter un titre" value={titleRecipe} onChange={
+                {/* <Input placeholder="Ajouter un titre" value={titleRecipe} onChange={
                     (event) => {
                         setTitleRecipe(event.currentTarget.value)
                     }
-                }/>
-                <Textarea
+                }/> */}
+               {/*  <Textarea
                     placeholder="Ajouter une description"
                     value={descriptionRecette}
                     onChange={
@@ -166,9 +207,9 @@ export const CreateRecipePage = () => {
                             setDescriptionRecette(event.currentTarget.value)
                         }
                     }
-                />
+                /> */}
 
-                <Flex w={500} justify={"flex-end"} direction={"column"} align={"flex-end"}>
+                <Flex w={500} justify={"center"} direction={"row"} align={"center"}>
                     <Title mt={40} mb={20} order={3}>Ajouter des ustensiles</Title>
 
                     <Input placeholder="Ajouter un nom" value={nameUstensil} onChange={
@@ -226,8 +267,70 @@ export const CreateRecipePage = () => {
                     }
                 </Flex>
 
-                <Box mt={20} mb={40}>
+                {/* <Box mt={20} mb={40}>
                     <ButtonPrimary >Creer la recette</ButtonPrimary>
+                </Box> */}
+            </div>
+            
+            <div>
+                {/* <Input placeholder="Ajouter un titre" value={titleRecipe} onChange={
+                    (event) => {
+                        setTitleRecipe(event.currentTarget.value)
+                    }
+                }/> */}
+                {/* <Textarea
+                    placeholder="Ajouter une description"
+                    value={descriptionRecipe}
+                    onChange={
+                        (event) => {
+                            setDescriptionRecipe(event.currentTarget.value)
+                        }
+                    }
+                /> */}
+
+                <Flex w={500} justify={"center"} direction={"column"} align={"center"}>
+                    <Title mt={40} mb={20} order={3}>Ajouter les descriptions de recettes</Title>
+
+                    <Input placeholder="Ajouter un nom" value={nameRecipeDescription} onChange={
+                        (event) => {
+                            setNameRecipeDescription(event.currentTarget.value)
+                        }
+                    }/>
+                    <Input placeholder="Ajouter une description" value={descriptionRecipeDescription} onChange={
+                        (event) => {
+                            setDescriptionRecipeDescription(event.currentTarget.value)
+                        }
+                    }/>
+                    <Input placeholder="Ajouter un temps" value={timeRecipeDescription} onChange={
+                        (event) => {
+                            setTimeRecipeDescription(event.currentTarget.value)
+                        }
+                    }/>
+
+                    <Box mt={20}>
+                        <ButtonPrimary onClickButton={addRecipeDescription} >Ajouter la description de la recette</ButtonPrimary>
+                    </Box>
+                </Flex>
+
+                <Flex>
+                    {
+                        listRecipeDescription.length > 0 &&
+                        listRecipeDescription.map((recipeDescription, index) => {
+                            return (
+                                <div style={{backgroundColor: "#E5E5E5", marginTop:"20px", marginLeft: "20px"}} key={index}>
+                                    <p>id: {recipeDescription.id}</p>
+                                    <p>name: {recipeDescription.name}</p>
+                                    <p>description: {recipeDescription.description}</p>
+                                    <p>quantité: {recipeDescription.time}</p>
+                                    <button onClick={() => deleteRecipeDescription(recipeDescription.id)} >supprimer</button>
+                                </div>
+                            )
+                        })  
+                    }
+                </Flex>
+
+                <Box mt={20} mb={40}>
+                    <ButtonPrimary >Créer la recette</ButtonPrimary>
                 </Box>
             </div>
         </>
