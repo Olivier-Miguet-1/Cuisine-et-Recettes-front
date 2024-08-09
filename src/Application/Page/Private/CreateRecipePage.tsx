@@ -168,7 +168,7 @@ export const CreateRecipePage = () => {
                     }
                 /> */}
 
-                <Flex w={500} justify={"flex-end"} direction={"column"} align={"flex-end"}>
+               {/*  <Flex w={500} justify={"flex-end"} direction={"column"} align={"flex-end"}>
                     <Title mt={40} mb={20} order={3}>Ajouter des ustensiles</Title>
 
                     <Input placeholder="Ajouter un nom" value={nameUstensil} onChange={
@@ -185,7 +185,7 @@ export const CreateRecipePage = () => {
                         (event) => {
                             setQuantityUstensil(event.currentTarget.value)
                         }
-                    }/>
+                    }/> */}
 
                     <Box mt={20}>
                         <ButtonPrimary onClickButton={addUstensil} >Ajouter ustensile</ButtonPrimary>
@@ -209,7 +209,7 @@ export const CreateRecipePage = () => {
                     }
                 </Flex>
 
-                <Flex>
+                {/* <Flex>
                     {
                         listUstensil.length > 0 &&
                         listUstensil.map((ustensil, index) => {
@@ -224,7 +224,7 @@ export const CreateRecipePage = () => {
                             )
                         })  
                     }
-                </Flex>
+                </Flex> */}
 
                 <Box mt={20} mb={40}>
                     <ButtonPrimary >Creer la recette</ButtonPrimary>
